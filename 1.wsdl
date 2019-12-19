@@ -1,0 +1,1157 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<definitions xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="https://nyadm_ws10.netinary.net" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="https://nyadm_ws10.netinary.net">
+<types>
+<xsd:schema targetNamespace="https://nyadm_ws10.netinary.net">
+<xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+<xsd:import namespace="http://schemas.xmlsoap.org/wsdl/"/>
+<xsd:complexType name="table_field">
+<xsd:all>
+<xsd:element name="table" type="xsd:string"/>
+<xsd:element name="field" type="xsd:string"/>
+<xsd:element name="default" type="xsd:string"/>
+<xsd:element name="type" type="xsd:string"/>
+</xsd:all>
+</xsd:complexType>
+<xsd:complexType name="table_field_array">
+<xsd:complexContent>
+<xsd:restriction base="SOAP-ENC:Array">
+<xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:table_field[]"/>
+</xsd:restriction>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="string_array">
+<xsd:complexContent>
+<xsd:restriction base="SOAP-ENC:Array">
+<xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="xsd:string[]"/>
+</xsd:restriction>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="message_info">
+<xsd:all>
+<xsd:element name="templateid" type="xsd:integer"/>
+<xsd:element name="from" type="xsd:string"/>
+<xsd:element name="subject" type="xsd:string"/>
+<xsd:element name="action" type="xsd:string"/>
+<xsd:element name="userid" type="xsd:integer"/>
+<xsd:element name="subscriptionid" type="xsd:integer"/>
+</xsd:all>
+</xsd:complexType>
+<xsd:complexType name="file_result">
+<xsd:all>
+<xsd:element name="success" type="xsd:boolean"/>
+<xsd:element name="url" type="xsd:string" optional="true"/>
+</xsd:all>
+</xsd:complexType>
+<xsd:complexType name="local_user">
+<xsd:all>
+<xsd:element name="userid" type="xsd:integer" use="optional"/>
+<xsd:element name="accountstatus" type="xsd:integer" use="optional"/>
+<xsd:element name="sex" type="xsd:string" use="optional"/>
+<xsd:element name="lastname" type="xsd:string" use="optional"/>
+<xsd:element name="firstname" type="xsd:string" use="optional"/>
+<xsd:element name="middlename" type="xsd:string" use="optional"/>
+<xsd:element name="address1" type="xsd:string" use="optional"/>
+<xsd:element name="address2" type="xsd:string" use="optional"/>
+<xsd:element name="address3" type="xsd:string" use="optional"/>
+<xsd:element name="room" type="xsd:string" use="optional"/>
+<xsd:element name="city" type="xsd:string" use="optional"/>
+<xsd:element name="zip" type="xsd:string" use="optional"/>
+<xsd:element name="country" type="xsd:integer" use="optional"/>
+<xsd:element name="state" type="xsd:integer" use="optional"/>
+<xsd:element name="birthday" type="xsd:string" use="optional"/>
+<xsd:element name="email" type="xsd:string" use="optional"/>
+<xsd:element name="hostemail" type="xsd:string" use="optional"/>
+<xsd:element name="phonenumber1" type="xsd:string" use="optional"/>
+<xsd:element name="phonenumber2" type="xsd:string" use="optional"/>
+<xsd:element name="username" type="xsd:string" use="optional"/>
+<xsd:element name="password" type="xsd:string" use="optional"/>
+<xsd:element name="language" type="xsd:string" use="optional"/>
+<xsd:element name="connected" type="xsd:integer" use="optional"/>
+<xsd:element name="bandwidthdown_min" type="xsd:integer" use="optional"/>
+<xsd:element name="bandwidthup_min" type="xsd:integer" use="optional"/>
+<xsd:element name="bandwidthdown" type="xsd:integer" use="optional"/>
+<xsd:element name="bandwidthup" type="xsd:integer" use="optional"/>
+<xsd:element name="companyid" type="xsd:integer" use="optional"/>
+<xsd:element name="subscriptionid" type="xsd:integer" use="optional"/>
+<xsd:element name="imsi" type="xsd:string" use="optional"/>
+<xsd:element name="url" type="xsd:string" use="optional"/>
+<xsd:element name="datecreation" type="xsd:string" use="optional"/>
+<xsd:element name="dateupdate" type="xsd:string" use="optional"/>
+<xsd:element name="outsideitf" type="xsd:string" use="optional"/>
+<xsd:element name="simultaneous_use" type="xsd:integer" use="optional"/>
+<xsd:element name="mac_authentication" type="xsd:integer" use="optional"/>
+<xsd:element name="usernameupdate" type="xsd:string" use="optional"/>
+<xsd:element name="usernamecreation" type="xsd:string" use="optional"/>
+<xsd:element name="useradmingroupid" type="xsd:integer" use="optional"/>
+<xsd:element name="billingday" type="xsd:integer" use="optional"/>
+<xsd:element name="billingstatus" type="xsd:string" use="optional"/>
+<xsd:element name="billingcanceldate" type="xsd:string" use="optional"/>
+<xsd:element name="billingcanceluser" type="xsd:string" use="optional"/>
+<xsd:element name="billingofferid" type="xsd:integer" use="optional"/>
+<xsd:element name="mercanetsubscriberid" type="xsd:string" use="optional"/>
+<xsd:element name="msisdn" type="xsd:string" use="optional"/>
+<xsd:element name="comment1" type="xsd:string" use="optional"/>
+<xsd:element name="comment2" type="xsd:string" use="optional"/>
+<xsd:element name="companyname" type="xsd:string" use="optional"/>
+<xsd:element name="password_validity" type="xsd:string" use="optional"/>
+<xsd:element name="pseudousername" type="xsd:string" use="optional"/>
+<xsd:element name="password_validity_period" type="xsd:integer" use="optional"/>
+<xsd:element name="prefix" type="xsd:string" use="optional"/>
+<xsd:element name="realm" type="xsd:string" use="optional"/>
+<xsd:element name="popup" type="xsd:integer" use="optional"/>
+<xsd:element name="pms_guestid" type="xsd:integer" use="optional"/>
+<xsd:element name="marketingagreement" type="xsd:integer" use="optional"/>
+</xsd:all>
+</xsd:complexType>
+<xsd:complexType name="local_user_filter"/>
+<xsd:complexType name="local_user_array">
+<xsd:complexContent>
+<xsd:restriction base="SOAP-ENC:Array">
+<xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:local_user[]"/>
+</xsd:restriction>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="local_user_query">
+<xsd:all>
+<xsd:element name="offset" type="xsd:integer"/>
+<xsd:element name="limit" type="xsd:integer" use="optional"/>
+<xsd:element name="orderby" type="tns:local_user_filter" use="optional"/>
+<xsd:element name="filter" type="tns:local_user_filter" use="optional"/>
+<xsd:element name="data" type="tns:local_user_filter"/>
+</xsd:all>
+</xsd:complexType>
+<xsd:complexType name="local_user_results">
+<xsd:all>
+<xsd:element name="total_count" type="xsd:integer" use="optional"/>
+<xsd:element name="returned_count" type="xsd:integer" use="optional"/>
+<xsd:element name="offset" type="xsd:integer"/>
+<xsd:element name="limit" type="xsd:integer"/>
+<xsd:element name="data" type="tns:local_user_array"/>
+</xsd:all>
+</xsd:complexType>
+<xsd:complexType name="subscription">
+<xsd:all>
+<xsd:element name="subscriptionid" type="xsd:integer" use="optional"/>
+<xsd:element name="serialnumber" type="xsd:string" use="optional"/>
+<xsd:element name="userid" type="xsd:integer" use="optional"/>
+<xsd:element name="offerid" type="xsd:integer" use="optional"/>
+<xsd:element name="sitegroupid" type="xsd:integer" use="optional"/>
+<xsd:element name="zonegroupid" type="xsd:integer" use="optional"/>
+<xsd:element name="ssidgroupid" type="xsd:integer" use="optional"/>
+<xsd:element name="nasid_limit" type="xsd:string" use="optional"/>
+<xsd:element name="zoneid_limit" type="xsd:string" use="optional"/>
+<xsd:element name="itfname" type="xsd:string" use="optional"/>
+<xsd:element name="itfgroupid" type="xsd:integer" use="optional"/>
+<xsd:element name="subscriptiontype" type="xsd:string" use="optional"/>
+<xsd:element name="subscriptiontime" type="xsd:integer" use="optional"/>
+<xsd:element name="subscriptionconnection" type="xsd:integer" use="optional"/>
+<xsd:element name="cardnumber" type="xsd:string" use="optional"/>
+<xsd:element name="cardmonthvalidity" type="xsd:string" use="optional"/>
+<xsd:element name="cardyearvalidity" type="xsd:string" use="optional"/>
+<xsd:element name="cardtype" type="xsd:string" use="optional"/>
+<xsd:element name="cardowner" type="xsd:string" use="optional"/>
+<xsd:element name="subscriptionvalidity" type="xsd:string" use="optional"/>
+<xsd:element name="subscriptioninitialtime" type="xsd:integer" use="optional"/>
+<xsd:element name="subscriptioninitialconnection" type="xsd:integer" use="optional"/>
+<xsd:element name="subscriptioninfo" type="xsd:string" use="optional"/>
+<xsd:element name="invoicetype" type="xsd:string" use="optional"/>
+<xsd:element name="invoicewho" type="xsd:string" use="optional"/>
+<xsd:element name="invoiceinfoid" type="xsd:string" use="optional"/>
+<xsd:element name="macrestriction" type="xsd:integer" use="optional"/>
+<xsd:element name="datecreation" type="xsd:string" use="optional"/>
+<xsd:element name="dateupdate" type="xsd:string" use="optional"/>
+<xsd:element name="subscriptionfirstvalidity" type="xsd:string" use="optional"/>
+<xsd:element name="subscriptionvalidityperiod" type="xsd:integer" use="optional"/>
+<xsd:element name="firstconnection" type="xsd:string" use="optional"/>
+<xsd:element name="forbidport" type="xsd:string" use="optional"/>
+<xsd:element name="forbidtime" type="xsd:string" use="optional"/>
+<xsd:element name="forbidday" type="xsd:integer" use="optional"/>
+<xsd:element name="volinput_init" type="xsd:integer" use="optional"/>
+<xsd:element name="voloutput_init" type="xsd:integer" use="optional"/>
+<xsd:element name="volinput_left" type="xsd:integer" use="optional"/>
+<xsd:element name="voloutput_left" type="xsd:integer" use="optional"/>
+<xsd:element name="idletimeout" type="xsd:integer" use="optional"/>
+<xsd:element name="discountcodeid" type="xsd:integer" use="optional"/>
+<xsd:element name="class_of_service" type="xsd:string" use="optional"/>
+<xsd:element name="class_of_proxy" type="xsd:string" use="optional"/>
+<xsd:element name="print_status" type="xsd:integer" use="optional"/>
+<xsd:element name="print_statusinitial" type="xsd:integer" use="optional"/>
+<xsd:element name="vlan" type="xsd:integer" use="optional"/>
+<xsd:element name="maxsessiontime" type="xsd:integer" use="optional"/>
+<xsd:element name="timebyperiod_time" type="xsd:integer" use="optional"/>
+<xsd:element name="timebyperiod_period" type="xsd:integer" use="optional"/>
+<xsd:element name="timebyperiod_mode" type="xsd:string" use="optional"/>
+<xsd:element name="arp" type="xsd:integer" use="optional"/>
+<xsd:element name="usernameupdate" type="xsd:string" use="optional"/>
+</xsd:all>
+</xsd:complexType>
+<xsd:complexType name="subscription_filter"/>
+<xsd:complexType name="subscription_array">
+<xsd:complexContent>
+<xsd:restriction base="SOAP-ENC:Array">
+<xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:subscription[]"/>
+</xsd:restriction>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="subscription_query">
+<xsd:all>
+<xsd:element name="offset" type="xsd:integer"/>
+<xsd:element name="limit" type="xsd:integer" use="optional"/>
+<xsd:element name="orderby" type="tns:subscription_filter" use="optional"/>
+<xsd:element name="filter" type="tns:subscription_filter" use="optional"/>
+<xsd:element name="data" type="tns:subscription_filter"/>
+</xsd:all>
+</xsd:complexType>
+<xsd:complexType name="subscription_results">
+<xsd:all>
+<xsd:element name="total_count" type="xsd:integer" use="optional"/>
+<xsd:element name="returned_count" type="xsd:integer" use="optional"/>
+<xsd:element name="offset" type="xsd:integer"/>
+<xsd:element name="limit" type="xsd:integer"/>
+<xsd:element name="data" type="tns:subscription_array"/>
+</xsd:all>
+</xsd:complexType>
+<xsd:complexType name="local_user_subscription">
+<xsd:all>
+<xsd:element name="userid" type="xsd:integer" use="optional"/>
+<xsd:element name="accountstatus" type="xsd:integer" use="optional"/>
+<xsd:element name="sex" type="xsd:string" use="optional"/>
+<xsd:element name="lastname" type="xsd:string" use="optional"/>
+<xsd:element name="firstname" type="xsd:string" use="optional"/>
+<xsd:element name="middlename" type="xsd:string" use="optional"/>
+<xsd:element name="address1" type="xsd:string" use="optional"/>
+<xsd:element name="address2" type="xsd:string" use="optional"/>
+<xsd:element name="address3" type="xsd:string" use="optional"/>
+<xsd:element name="room" type="xsd:string" use="optional"/>
+<xsd:element name="city" type="xsd:string" use="optional"/>
+<xsd:element name="zip" type="xsd:string" use="optional"/>
+<xsd:element name="country" type="xsd:integer" use="optional"/>
+<xsd:element name="state" type="xsd:integer" use="optional"/>
+<xsd:element name="birthday" type="xsd:string" use="optional"/>
+<xsd:element name="email" type="xsd:string" use="optional"/>
+<xsd:element name="hostemail" type="xsd:string" use="optional"/>
+<xsd:element name="phonenumber1" type="xsd:string" use="optional"/>
+<xsd:element name="phonenumber2" type="xsd:string" use="optional"/>
+<xsd:element name="username" type="xsd:string" use="optional"/>
+<xsd:element name="password" type="xsd:string" use="optional"/>
+<xsd:element name="language" type="xsd:string" use="optional"/>
+<xsd:element name="connected" type="xsd:integer" use="optional"/>
+<xsd:element name="bandwidthdown_min" type="xsd:integer" use="optional"/>
+<xsd:element name="bandwidthup_min" type="xsd:integer" use="optional"/>
+<xsd:element name="bandwidthdown" type="xsd:integer" use="optional"/>
+<xsd:element name="bandwidthup" type="xsd:integer" use="optional"/>
+<xsd:element name="companyid" type="xsd:integer" use="optional"/>
+<xsd:element name="subscriptionid" type="xsd:integer" use="optional"/>
+<xsd:element name="imsi" type="xsd:string" use="optional"/>
+<xsd:element name="url" type="xsd:string" use="optional"/>
+<xsd:element name="datecreation" type="xsd:string" use="optional"/>
+<xsd:element name="dateupdate" type="xsd:string" use="optional"/>
+<xsd:element name="outsideitf" type="xsd:string" use="optional"/>
+<xsd:element name="simultaneous_use" type="xsd:integer" use="optional"/>
+<xsd:element name="mac_authentication" type="xsd:integer" use="optional"/>
+<xsd:element name="usernameupdate" type="xsd:string" use="optional"/>
+<xsd:element name="usernamecreation" type="xsd:string" use="optional"/>
+<xsd:element name="useradmingroupid" type="xsd:integer" use="optional"/>
+<xsd:element name="billingday" type="xsd:integer" use="optional"/>
+<xsd:element name="billingstatus" type="xsd:string" use="optional"/>
+<xsd:element name="billingcanceldate" type="xsd:string" use="optional"/>
+<xsd:element name="billingcanceluser" type="xsd:string" use="optional"/>
+<xsd:element name="billingofferid" type="xsd:integer" use="optional"/>
+<xsd:element name="mercanetsubscriberid" type="xsd:string" use="optional"/>
+<xsd:element name="msisdn" type="xsd:string" use="optional"/>
+<xsd:element name="comment1" type="xsd:string" use="optional"/>
+<xsd:element name="comment2" type="xsd:string" use="optional"/>
+<xsd:element name="companyname" type="xsd:string" use="optional"/>
+<xsd:element name="password_validity" type="xsd:string" use="optional"/>
+<xsd:element name="pseudousername" type="xsd:string" use="optional"/>
+<xsd:element name="password_validity_period" type="xsd:integer" use="optional"/>
+<xsd:element name="prefix" type="xsd:string" use="optional"/>
+<xsd:element name="realm" type="xsd:string" use="optional"/>
+<xsd:element name="popup" type="xsd:integer" use="optional"/>
+<xsd:element name="pms_guestid" type="xsd:integer" use="optional"/>
+<xsd:element name="marketingagreement" type="xsd:integer" use="optional"/>
+<xsd:element name="serialnumber" type="xsd:string" use="optional"/>
+<xsd:element name="offerid" type="xsd:integer" use="optional"/>
+<xsd:element name="sitegroupid" type="xsd:integer" use="optional"/>
+<xsd:element name="zonegroupid" type="xsd:integer" use="optional"/>
+<xsd:element name="ssidgroupid" type="xsd:integer" use="optional"/>
+<xsd:element name="nasid_limit" type="xsd:string" use="optional"/>
+<xsd:element name="zoneid_limit" type="xsd:string" use="optional"/>
+<xsd:element name="itfname" type="xsd:string" use="optional"/>
+<xsd:element name="itfgroupid" type="xsd:integer" use="optional"/>
+<xsd:element name="subscriptiontype" type="xsd:string" use="optional"/>
+<xsd:element name="subscriptiontime" type="xsd:integer" use="optional"/>
+<xsd:element name="subscriptionconnection" type="xsd:integer" use="optional"/>
+<xsd:element name="cardnumber" type="xsd:string" use="optional"/>
+<xsd:element name="cardmonthvalidity" type="xsd:string" use="optional"/>
+<xsd:element name="cardyearvalidity" type="xsd:string" use="optional"/>
+<xsd:element name="cardtype" type="xsd:string" use="optional"/>
+<xsd:element name="cardowner" type="xsd:string" use="optional"/>
+<xsd:element name="subscriptionvalidity" type="xsd:string" use="optional"/>
+<xsd:element name="subscriptioninitialtime" type="xsd:integer" use="optional"/>
+<xsd:element name="subscriptioninitialconnection" type="xsd:integer" use="optional"/>
+<xsd:element name="subscriptioninfo" type="xsd:string" use="optional"/>
+<xsd:element name="invoicetype" type="xsd:string" use="optional"/>
+<xsd:element name="invoicewho" type="xsd:string" use="optional"/>
+<xsd:element name="invoiceinfoid" type="xsd:string" use="optional"/>
+<xsd:element name="macrestriction" type="xsd:integer" use="optional"/>
+<xsd:element name="subscriptionfirstvalidity" type="xsd:string" use="optional"/>
+<xsd:element name="subscriptionvalidityperiod" type="xsd:integer" use="optional"/>
+<xsd:element name="firstconnection" type="xsd:string" use="optional"/>
+<xsd:element name="forbidport" type="xsd:string" use="optional"/>
+<xsd:element name="forbidtime" type="xsd:string" use="optional"/>
+<xsd:element name="forbidday" type="xsd:integer" use="optional"/>
+<xsd:element name="volinput_init" type="xsd:integer" use="optional"/>
+<xsd:element name="voloutput_init" type="xsd:integer" use="optional"/>
+<xsd:element name="volinput_left" type="xsd:integer" use="optional"/>
+<xsd:element name="voloutput_left" type="xsd:integer" use="optional"/>
+<xsd:element name="idletimeout" type="xsd:integer" use="optional"/>
+<xsd:element name="discountcodeid" type="xsd:integer" use="optional"/>
+<xsd:element name="class_of_service" type="xsd:string" use="optional"/>
+<xsd:element name="class_of_proxy" type="xsd:string" use="optional"/>
+<xsd:element name="print_status" type="xsd:integer" use="optional"/>
+<xsd:element name="print_statusinitial" type="xsd:integer" use="optional"/>
+<xsd:element name="vlan" type="xsd:integer" use="optional"/>
+<xsd:element name="maxsessiontime" type="xsd:integer" use="optional"/>
+<xsd:element name="timebyperiod_time" type="xsd:integer" use="optional"/>
+<xsd:element name="timebyperiod_period" type="xsd:integer" use="optional"/>
+<xsd:element name="timebyperiod_mode" type="xsd:string" use="optional"/>
+<xsd:element name="arp" type="xsd:integer" use="optional"/>
+<xsd:element name="subscription_expired" type="xsd:boolean" use="optional"/>
+</xsd:all>
+</xsd:complexType>
+<xsd:complexType name="local_user_subscription_filter"/>
+<xsd:complexType name="local_user_subscription_array">
+<xsd:complexContent>
+<xsd:restriction base="SOAP-ENC:Array">
+<xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:local_user_subscription[]"/>
+</xsd:restriction>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="local_user_subscription_query">
+<xsd:all>
+<xsd:element name="offset" type="xsd:integer"/>
+<xsd:element name="limit" type="xsd:integer" use="optional"/>
+<xsd:element name="orderby" type="tns:local_user_subscription_filter" use="optional"/>
+<xsd:element name="filter" type="tns:local_user_subscription_filter" use="optional"/>
+<xsd:element name="data" type="tns:local_user_subscription_filter"/>
+</xsd:all>
+</xsd:complexType>
+<xsd:complexType name="local_user_subscription_results">
+<xsd:all>
+<xsd:element name="total_count" type="xsd:integer" use="optional"/>
+<xsd:element name="returned_count" type="xsd:integer" use="optional"/>
+<xsd:element name="offset" type="xsd:integer"/>
+<xsd:element name="limit" type="xsd:integer"/>
+<xsd:element name="data" type="tns:local_user_subscription_array"/>
+</xsd:all>
+</xsd:complexType>
+<xsd:complexType name="offer">
+<xsd:all>
+<xsd:element name="offerid" type="xsd:integer" use="optional"/>
+<xsd:element name="offerstatus" type="xsd:integer" use="optional"/>
+<xsd:element name="offertype" type="xsd:integer" use="optional"/>
+<xsd:element name="serialnumber" type="xsd:string" use="optional"/>
+<xsd:element name="description" type="xsd:string" use="optional"/>
+<xsd:element name="accountstatus" type="xsd:integer" use="optional"/>
+<xsd:element name="username" type="xsd:string" use="optional"/>
+<xsd:element name="bandwidthdown_min" type="xsd:integer" use="optional"/>
+<xsd:element name="bandwidthup_min" type="xsd:integer" use="optional"/>
+<xsd:element name="bandwidthdown" type="xsd:integer" use="optional"/>
+<xsd:element name="bandwidthup" type="xsd:integer" use="optional"/>
+<xsd:element name="subscriptiontype" type="xsd:string" use="optional"/>
+<xsd:element name="subscriptiontime" type="xsd:integer" use="optional"/>
+<xsd:element name="subscriptionconnection" type="xsd:integer" use="optional"/>
+<xsd:element name="subscriptionvalidity" type="xsd:string" use="optional"/>
+<xsd:element name="subscriptioninitialtime" type="xsd:integer" use="optional"/>
+<xsd:element name="subscriptioninitialconnection" type="xsd:integer" use="optional"/>
+<xsd:element name="subscriptioninfo" type="xsd:string" use="optional"/>
+<xsd:element name="invoicetype" type="xsd:string" use="optional"/>
+<xsd:element name="invoicewho" type="xsd:string" use="optional"/>
+<xsd:element name="invoiceinfoid" type="xsd:string" use="optional"/>
+<xsd:element name="macrestriction" type="xsd:integer" use="optional"/>
+<xsd:element name="datecreation" type="xsd:string" use="optional"/>
+<xsd:element name="dateupdate" type="xsd:string" use="optional"/>
+<xsd:element name="subscriptionfirstvalidity" type="xsd:string" use="optional"/>
+<xsd:element name="subscriptionvalidityperiod" type="xsd:integer" use="optional"/>
+<xsd:element name="forbidport" type="xsd:string" use="optional"/>
+<xsd:element name="forbidtime" type="xsd:string" use="optional"/>
+<xsd:element name="forbidday" type="xsd:integer" use="optional"/>
+<xsd:element name="volinput_init" type="xsd:integer" use="optional"/>
+<xsd:element name="voloutput_init" type="xsd:integer" use="optional"/>
+<xsd:element name="volinput_left" type="xsd:integer" use="optional"/>
+<xsd:element name="voloutput_left" type="xsd:integer" use="optional"/>
+<xsd:element name="idletimeout" type="xsd:integer" use="optional"/>
+<xsd:element name="outsideitf" type="xsd:string" use="optional"/>
+<xsd:element name="usernameupdate" type="xsd:string" use="optional"/>
+<xsd:element name="url" type="xsd:string" use="optional"/>
+<xsd:element name="pptp" type="xsd:integer" use="optional"/>
+<xsd:element name="nasid_limit" type="xsd:string" use="optional"/>
+<xsd:element name="sitegroupid" type="xsd:integer" use="optional"/>
+<xsd:element name="ssidgroupid" type="xsd:integer" use="optional"/>
+<xsd:element name="zonegroupid" type="xsd:integer" use="optional"/>
+<xsd:element name="zoneid_limit" type="xsd:string" use="optional"/>
+<xsd:element name="itfname" type="xsd:string" use="optional"/>
+<xsd:element name="itfgroupid" type="xsd:integer" use="optional"/>
+<xsd:element name="class_of_service" type="xsd:string" use="optional"/>
+<xsd:element name="class_of_proxy" type="xsd:string" use="optional"/>
+<xsd:element name="print_status" type="xsd:integer" use="optional"/>
+<xsd:element name="print_statusinitial" type="xsd:integer" use="optional"/>
+<xsd:element name="display" type="xsd:string" use="optional"/>
+<xsd:element name="enablediscount" type="xsd:integer" use="optional"/>
+<xsd:element name="simultaneous_use" type="xsd:integer" use="optional"/>
+<xsd:element name="billingday" type="xsd:integer" use="optional"/>
+<xsd:element name="billingperiod" type="xsd:string" use="optional"/>
+<xsd:element name="billingtime" type="xsd:integer" use="optional"/>
+<xsd:element name="closingdays" type="xsd:integer" use="optional"/>
+<xsd:element name="closingtime" type="xsd:string" use="optional"/>
+<xsd:element name="popup" type="xsd:integer" use="optional"/>
+<xsd:element name="renew" type="xsd:integer" use="optional"/>
+<xsd:element name="vlan" type="xsd:integer" use="optional"/>
+<xsd:element name="maxsessiontime" type="xsd:integer" use="optional"/>
+<xsd:element name="timebyperiod_time" type="xsd:integer" use="optional"/>
+<xsd:element name="timebyperiod_period" type="xsd:integer" use="optional"/>
+<xsd:element name="timebyperiod_mode" type="xsd:string" use="optional"/>
+<xsd:element name="arp" type="xsd:integer" use="optional"/>
+<xsd:element name="mac_authentication" type="xsd:integer" use="optional"/>
+<xsd:element name="average" type="xsd:string" use="optional"/>
+<xsd:element name="averageextrasecond" type="xsd:string" use="optional"/>
+<xsd:element name="currency" type="xsd:string" use="optional"/>
+<xsd:element name="vat" type="xsd:string" use="optional"/>
+<xsd:element name="language" type="xsd:string" use="optional"/>
+<xsd:element name="title" type="xsd:string" use="optional"/>
+<xsd:element name="expired" type="xsd:boolean" use="optional"/>
+</xsd:all>
+</xsd:complexType>
+<xsd:complexType name="offer_filter"/>
+<xsd:complexType name="offer_array">
+<xsd:complexContent>
+<xsd:restriction base="SOAP-ENC:Array">
+<xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:offer[]"/>
+</xsd:restriction>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="offer_query">
+<xsd:all>
+<xsd:element name="offset" type="xsd:integer"/>
+<xsd:element name="limit" type="xsd:integer" use="optional"/>
+<xsd:element name="orderby" type="tns:offer_filter" use="optional"/>
+<xsd:element name="filter" type="tns:offer_filter" use="optional"/>
+<xsd:element name="data" type="tns:offer_filter"/>
+</xsd:all>
+</xsd:complexType>
+<xsd:complexType name="offer_results">
+<xsd:all>
+<xsd:element name="total_count" type="xsd:integer" use="optional"/>
+<xsd:element name="returned_count" type="xsd:integer" use="optional"/>
+<xsd:element name="offset" type="xsd:integer"/>
+<xsd:element name="limit" type="xsd:integer"/>
+<xsd:element name="data" type="tns:offer_array"/>
+</xsd:all>
+</xsd:complexType>
+<xsd:complexType name="connections">
+<xsd:all>
+<xsd:element name="connectionid" type="xsd:string" use="optional"/>
+<xsd:element name="multiboxid" type="xsd:string" use="optional"/>
+<xsd:element name="username" type="xsd:string" use="optional"/>
+<xsd:element name="ip" type="xsd:string" use="optional"/>
+<xsd:element name="accessid" type="xsd:string" use="optional"/>
+<xsd:element name="starttime" type="xsd:string" use="optional"/>
+<xsd:element name="status" type="xsd:integer" use="optional"/>
+<xsd:element name="endtime" type="xsd:string" use="optional"/>
+<xsd:element name="local" type="xsd:integer" use="optional"/>
+<xsd:element name="subscriptionid" type="xsd:integer" use="optional"/>
+<xsd:element name="localstarttime" type="xsd:integer" use="optional"/>
+<xsd:element name="localendtime" type="xsd:integer" use="optional"/>
+<xsd:element name="terminatecause" type="xsd:integer" use="optional"/>
+<xsd:element name="mu_mac_address" type="xsd:string" use="optional"/>
+<xsd:element name="multibox_ip" type="xsd:string" use="optional"/>
+<xsd:element name="nas_port" type="xsd:string" use="optional"/>
+<xsd:element name="volume_input" type="xsd:integer" use="optional"/>
+<xsd:element name="volume_output" type="xsd:integer" use="optional"/>
+<xsd:element name="packets_input" type="xsd:integer" use="optional"/>
+<xsd:element name="packets_output" type="xsd:integer" use="optional"/>
+<xsd:element name="infoclass" type="xsd:string" use="optional"/>
+<xsd:element name="acct_delay" type="xsd:integer" use="optional"/>
+<xsd:element name="port_ip_min" type="xsd:integer" use="optional"/>
+<xsd:element name="port_ip_max" type="xsd:integer" use="optional"/>
+<xsd:element name="ssid" type="xsd:string" use="optional"/>
+<xsd:element name="location_name" type="xsd:string" use="optional"/>
+<xsd:element name="location_id" type="xsd:string" use="optional"/>
+<xsd:element name="authserver" type="xsd:string" use="optional"/>
+<xsd:element name="datepurge" type="xsd:string" use="optional"/>
+<xsd:element name="password" type="xsd:string" use="optional"/>
+<xsd:element name="zoneid" type="xsd:integer" use="optional"/>
+<xsd:element name="zonegroupid" type="xsd:integer" use="optional"/>
+<xsd:element name="zonename" type="xsd:string" use="optional"/>
+<xsd:element name="zonegroupname" type="xsd:string" use="optional"/>
+<xsd:element name="itfname" type="xsd:string" use="optional"/>
+<xsd:element name="itfgroupname" type="xsd:string" use="optional"/>
+<xsd:element name="itfgroupid" type="xsd:integer" use="optional"/>
+<xsd:element name="print_acct" type="xsd:integer" use="optional"/>
+<xsd:element name="user_agent" type="xsd:string" use="optional"/>
+<xsd:element name="failure_cause" type="xsd:integer" use="optional"/>
+</xsd:all>
+</xsd:complexType>
+<xsd:complexType name="connections_filter"/>
+<xsd:complexType name="connections_array">
+<xsd:complexContent>
+<xsd:restriction base="SOAP-ENC:Array">
+<xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:connections[]"/>
+</xsd:restriction>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="connections_query">
+<xsd:all>
+<xsd:element name="offset" type="xsd:integer"/>
+<xsd:element name="limit" type="xsd:integer" use="optional"/>
+<xsd:element name="orderby" type="tns:connections_filter" use="optional"/>
+<xsd:element name="filter" type="tns:connections_filter" use="optional"/>
+<xsd:element name="data" type="tns:connections_filter"/>
+</xsd:all>
+</xsd:complexType>
+<xsd:complexType name="connections_results">
+<xsd:all>
+<xsd:element name="total_count" type="xsd:integer" use="optional"/>
+<xsd:element name="returned_count" type="xsd:integer" use="optional"/>
+<xsd:element name="offset" type="xsd:integer"/>
+<xsd:element name="limit" type="xsd:integer"/>
+<xsd:element name="data" type="tns:connections_array"/>
+</xsd:all>
+</xsd:complexType>
+<xsd:complexType name="connections_logoff">
+<xsd:all>
+<xsd:element name="username" type="xsd:string"/>
+<xsd:element name="password" type="xsd:string"/>
+<xsd:element name="mu_mac_address" type="xsd:string"/>
+<xsd:element name="ip" type="xsd:string"/>
+</xsd:all>
+</xsd:complexType>
+<xsd:complexType name="connections_logoff_array">
+<xsd:complexContent>
+<xsd:restriction base="SOAP-ENC:Array">
+<xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:connections_logoff[]"/>
+</xsd:restriction>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="connections_logoff_results">
+<xsd:all>
+<xsd:element name="total_count" type="xsd:integer" use="optional"/>
+<xsd:element name="returned_count" type="xsd:integer" use="optional"/>
+<xsd:element name="offset" type="xsd:integer"/>
+<xsd:element name="limit" type="xsd:integer"/>
+<xsd:element name="data" type="tns:connections_logoff_array"/>
+</xsd:all>
+</xsd:complexType>
+</xsd:schema>
+</types>
+<message name="check_connectionRequest"/>
+<message name="check_connectionResponse">
+<part name="return" type="xsd:boolean"/>
+</message>
+<message name="local_user_username_existsRequest">
+<part name="username" type="xsd:string"/>
+</message>
+<message name="local_user_username_existsResponse">
+<part name="return" type="xsd:boolean"/>
+</message>
+<message name="local_user_get_default_fieldsRequest"/>
+<message name="local_user_get_default_fieldsResponse">
+<part name="return" type="tns:local_user"/>
+</message>
+<message name="local_users_searchRequest">
+<part name="local_user_subscription_query" type="tns:local_user_subscription_query"/>
+</message>
+<message name="local_users_searchResponse">
+<part name="return" type="tns:local_user_subscription_results"/>
+</message>
+<message name="local_users_create_from_offeridRequest">
+<part name="local_user_subscriptions" type="tns:local_user_subscription_array"/>
+<part name="offerid" type="xsd:integer"/>
+</message>
+<message name="local_users_create_from_offeridResponse">
+<part name="return" type="tns:local_user_subscription_results"/>
+</message>
+<message name="local_users_update_from_offeridRequest">
+<part name="local_user_subscriptions" type="tns:local_user_subscription_array"/>
+<part name="offerid" type="xsd:integer"/>
+</message>
+<message name="local_users_update_from_offeridResponse">
+<part name="return" type="tns:local_user_subscription_results"/>
+</message>
+<message name="local_users_set_accountstatusRequest">
+<part name="local_users" type="tns:local_user_array"/>
+</message>
+<message name="local_users_set_accountstatusResponse">
+<part name="return" type="xsd:boolean"/>
+</message>
+<message name="local_users_updateRequest">
+<part name="local_users" type="tns:local_user_array"/>
+</message>
+<message name="local_users_updateResponse">
+<part name="return" type="xsd:boolean"/>
+</message>
+<message name="local_users_deleteRequest">
+<part name="local_users" type="tns:local_user_array"/>
+</message>
+<message name="local_users_deleteResponse">
+<part name="return" type="xsd:boolean"/>
+</message>
+<message name="local_users_get_last_connectionRequest">
+<part name="local_users" type="tns:local_user_array"/>
+</message>
+<message name="local_users_get_last_connectionResponse">
+<part name="return" type="tns:connections_results"/>
+</message>
+<message name="local_users_get_first_connectionRequest">
+<part name="local_users" type="tns:local_user_array"/>
+</message>
+<message name="local_users_get_first_connectionResponse">
+<part name="return" type="tns:connections_results"/>
+</message>
+<message name="local_user_message_sendRequest">
+<part name="message_info" type="tns:message_info"/>
+</message>
+<message name="local_user_message_sendResponse">
+<part name="return" type="xsd:boolean"/>
+</message>
+<message name="local_user_compute_billRequest">
+<part name="message_info" type="tns:message_info"/>
+</message>
+<message name="local_user_compute_billResponse">
+<part name="return" type="tns:file_result"/>
+</message>
+<message name="subscriptions_searchRequest">
+<part name="subscription_query" type="tns:subscription_query"/>
+</message>
+<message name="subscriptions_searchResponse">
+<part name="return" type="tns:subscription_results"/>
+</message>
+<message name="subscription_get_default_fieldsRequest"/>
+<message name="subscription_get_default_fieldsResponse">
+<part name="return" type="tns:subscription"/>
+</message>
+<message name="offers_searchRequest">
+<part name="offer_query" type="tns:offer_query"/>
+</message>
+<message name="offers_searchResponse">
+<part name="return" type="tns:offer_results"/>
+</message>
+<message name="offer_get_to_define_fieldsRequest">
+<part name="offerid" type="xsd:integer"/>
+</message>
+<message name="offer_get_to_define_fieldsResponse">
+<part name="return" type="tns:table_field_array"/>
+</message>
+<message name="connections_searchRequest">
+<part name="connections_query" type="tns:connections_query"/>
+</message>
+<message name="connections_searchResponse">
+<part name="return" type="tns:connections_results"/>
+</message>
+<message name="connections_logoffRequest">
+<part name="connections_query" type="tns:connections_query"/>
+</message>
+<message name="connections_logoffResponse">
+<part name="return" type="tns:connections_logoff_results"/>
+</message>
+<message name="userlog_search_by_ipRequest">
+<part name="ip_src" type="xsd:string"/>
+<part name="ip_dst" type="xsd:string"/>
+<part name="local_start_time" type="xsd:string"/>
+<part name="local_end_time" type="xsd:string"/>
+</message>
+<message name="userlog_search_by_ipResponse">
+<part name="return" type="tns:file_result"/>
+</message>
+<message name="userlog_search_by_connectionidRequest">
+<part name="connectionid" type="xsd:string"/>
+</message>
+<message name="userlog_search_by_connectionidResponse">
+<part name="return" type="tns:file_result"/>
+</message>
+<message name="urls_get_toprankRequest">
+<part name="num" type="xsd:integer"/>
+<part name="ip" type="xsd:string"/>
+<part name="local_start_time" type="xsd:string"/>
+<part name="local_end_time" type="xsd:string"/>
+</message>
+<message name="urls_get_toprankResponse">
+<part name="return" type="tns:file_result"/>
+</message>
+<message name="httplog_search_by_ipRequest">
+<part name="ip" type="xsd:string"/>
+<part name="local_start_time" type="xsd:string"/>
+<part name="local_end_time" type="xsd:string"/>
+</message>
+<message name="httplog_search_by_ipResponse">
+<part name="return" type="tns:file_result"/>
+</message>
+<message name="httplog_search_by_urlRequest">
+<part name="url" type="xsd:string"/>
+<part name="local_start_time" type="xsd:string"/>
+<part name="local_end_time" type="xsd:string"/>
+</message>
+<message name="httplog_search_by_urlResponse">
+<part name="return" type="tns:file_result"/>
+</message>
+<message name="httplog_search_by_connectionidRequest">
+<part name="connectionid" type="xsd:string"/>
+</message>
+<message name="httplog_search_by_connectionidResponse">
+<part name="return" type="tns:file_result"/>
+</message>
+<message name="maillog_search_by_ipRequest">
+<part name="ip" type="xsd:string"/>
+<part name="local_start_time" type="xsd:string"/>
+<part name="local_end_time" type="xsd:string"/>
+</message>
+<message name="maillog_search_by_ipResponse">
+<part name="return" type="tns:file_result"/>
+</message>
+<message name="maillog_search_by_fromRequest">
+<part name="from" type="xsd:string"/>
+<part name="local_start_time" type="xsd:string"/>
+<part name="local_end_time" type="xsd:string"/>
+</message>
+<message name="maillog_search_by_fromResponse">
+<part name="return" type="tns:file_result"/>
+</message>
+<message name="maillog_search_by_toRequest">
+<part name="to" type="xsd:string"/>
+<part name="local_start_time" type="xsd:string"/>
+<part name="local_end_time" type="xsd:string"/>
+</message>
+<message name="maillog_search_by_toResponse">
+<part name="return" type="tns:file_result"/>
+</message>
+<message name="maillog_search_by_connectionidRequest">
+<part name="connectionid" type="xsd:string"/>
+</message>
+<message name="maillog_search_by_connectionidResponse">
+<part name="return" type="tns:file_result"/>
+</message>
+<message name="sms_get_creditRequest">
+<part name="configuration" type="xsd:string"/>
+</message>
+<message name="sms_get_creditResponse">
+<part name="return" type="xsd:string"/>
+</message>
+<message name="portal_get_access_codeRequest"/>
+<message name="portal_get_access_codeResponse">
+<part name="return" type="xsd:string"/>
+</message>
+<portType name="admin_webservicesPortType">
+<operation name="check_connection">
+<input message="tns:check_connectionRequest"/>
+<output message="tns:check_connectionResponse"/>
+</operation>
+<operation name="local_user_username_exists">
+<input message="tns:local_user_username_existsRequest"/>
+<output message="tns:local_user_username_existsResponse"/>
+</operation>
+<operation name="local_user_get_default_fields">
+<input message="tns:local_user_get_default_fieldsRequest"/>
+<output message="tns:local_user_get_default_fieldsResponse"/>
+</operation>
+<operation name="local_users_search">
+<input message="tns:local_users_searchRequest"/>
+<output message="tns:local_users_searchResponse"/>
+</operation>
+<operation name="local_users_create_from_offerid">
+<input message="tns:local_users_create_from_offeridRequest"/>
+<output message="tns:local_users_create_from_offeridResponse"/>
+</operation>
+<operation name="local_users_update_from_offerid">
+<input message="tns:local_users_update_from_offeridRequest"/>
+<output message="tns:local_users_update_from_offeridResponse"/>
+</operation>
+<operation name="local_users_set_accountstatus">
+<input message="tns:local_users_set_accountstatusRequest"/>
+<output message="tns:local_users_set_accountstatusResponse"/>
+</operation>
+<operation name="local_users_update">
+<input message="tns:local_users_updateRequest"/>
+<output message="tns:local_users_updateResponse"/>
+</operation>
+<operation name="local_users_delete">
+<input message="tns:local_users_deleteRequest"/>
+<output message="tns:local_users_deleteResponse"/>
+</operation>
+<operation name="local_users_get_last_connection">
+<input message="tns:local_users_get_last_connectionRequest"/>
+<output message="tns:local_users_get_last_connectionResponse"/>
+</operation>
+<operation name="local_users_get_first_connection">
+<input message="tns:local_users_get_first_connectionRequest"/>
+<output message="tns:local_users_get_first_connectionResponse"/>
+</operation>
+<operation name="local_user_message_send">
+<input message="tns:local_user_message_sendRequest"/>
+<output message="tns:local_user_message_sendResponse"/>
+</operation>
+<operation name="local_user_compute_bill">
+<input message="tns:local_user_compute_billRequest"/>
+<output message="tns:local_user_compute_billResponse"/>
+</operation>
+<operation name="subscriptions_search">
+<input message="tns:subscriptions_searchRequest"/>
+<output message="tns:subscriptions_searchResponse"/>
+</operation>
+<operation name="subscription_get_default_fields">
+<input message="tns:subscription_get_default_fieldsRequest"/>
+<output message="tns:subscription_get_default_fieldsResponse"/>
+</operation>
+<operation name="offers_search">
+<input message="tns:offers_searchRequest"/>
+<output message="tns:offers_searchResponse"/>
+</operation>
+<operation name="offer_get_to_define_fields">
+<input message="tns:offer_get_to_define_fieldsRequest"/>
+<output message="tns:offer_get_to_define_fieldsResponse"/>
+</operation>
+<operation name="connections_search">
+<input message="tns:connections_searchRequest"/>
+<output message="tns:connections_searchResponse"/>
+</operation>
+<operation name="connections_logoff">
+<input message="tns:connections_logoffRequest"/>
+<output message="tns:connections_logoffResponse"/>
+</operation>
+<operation name="userlog_search_by_ip">
+<input message="tns:userlog_search_by_ipRequest"/>
+<output message="tns:userlog_search_by_ipResponse"/>
+</operation>
+<operation name="userlog_search_by_connectionid">
+<input message="tns:userlog_search_by_connectionidRequest"/>
+<output message="tns:userlog_search_by_connectionidResponse"/>
+</operation>
+<operation name="urls_get_toprank">
+<input message="tns:urls_get_toprankRequest"/>
+<output message="tns:urls_get_toprankResponse"/>
+</operation>
+<operation name="httplog_search_by_ip">
+<input message="tns:httplog_search_by_ipRequest"/>
+<output message="tns:httplog_search_by_ipResponse"/>
+</operation>
+<operation name="httplog_search_by_url">
+<input message="tns:httplog_search_by_urlRequest"/>
+<output message="tns:httplog_search_by_urlResponse"/>
+</operation>
+<operation name="httplog_search_by_connectionid">
+<input message="tns:httplog_search_by_connectionidRequest"/>
+<output message="tns:httplog_search_by_connectionidResponse"/>
+</operation>
+<operation name="maillog_search_by_ip">
+<input message="tns:maillog_search_by_ipRequest"/>
+<output message="tns:maillog_search_by_ipResponse"/>
+</operation>
+<operation name="maillog_search_by_from">
+<input message="tns:maillog_search_by_fromRequest"/>
+<output message="tns:maillog_search_by_fromResponse"/>
+</operation>
+<operation name="maillog_search_by_to">
+<input message="tns:maillog_search_by_toRequest"/>
+<output message="tns:maillog_search_by_toResponse"/>
+</operation>
+<operation name="maillog_search_by_connectionid">
+<input message="tns:maillog_search_by_connectionidRequest"/>
+<output message="tns:maillog_search_by_connectionidResponse"/>
+</operation>
+<operation name="sms_get_credit">
+<input message="tns:sms_get_creditRequest"/>
+<output message="tns:sms_get_creditResponse"/>
+</operation>
+<operation name="portal_get_access_code">
+<input message="tns:portal_get_access_codeRequest"/>
+<output message="tns:portal_get_access_codeResponse"/>
+</operation>
+</portType>
+<binding name="admin_webservicesBinding" type="tns:admin_webservicesPortType">
+<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+<operation name="check_connection">
+<soap:operation soapAction="https://10.200.180.31/index.php/check_connection" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="local_user_username_exists">
+<soap:operation soapAction="https://10.200.180.31/index.php/local_user_username_exists" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="local_user_get_default_fields">
+<soap:operation soapAction="https://10.200.180.31/index.php/local_user_get_default_fields" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="local_users_search">
+<soap:operation soapAction="https://10.200.180.31/index.php/local_users_search" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="local_users_create_from_offerid">
+<soap:operation soapAction="https://10.200.180.31/index.php/local_users_create_from_offerid" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="local_users_update_from_offerid">
+<soap:operation soapAction="https://10.200.180.31/index.php/local_users_update_from_offerid" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="local_users_set_accountstatus">
+<soap:operation soapAction="https://10.200.180.31/index.php/local_users_set_accountstatus" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="local_users_update">
+<soap:operation soapAction="https://10.200.180.31/index.php/local_users_update" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="local_users_delete">
+<soap:operation soapAction="https://10.200.180.31/index.php/local_users_delete" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="local_users_get_last_connection">
+<soap:operation soapAction="https://10.200.180.31/index.php/local_users_get_last_connection" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="local_users_get_first_connection">
+<soap:operation soapAction="https://10.200.180.31/index.php/local_users_get_first_connection" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="local_user_message_send">
+<soap:operation soapAction="https://10.200.180.31/index.php/local_user_message_send" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="local_user_compute_bill">
+<soap:operation soapAction="https://10.200.180.31/index.php/local_user_compute_bill" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="subscriptions_search">
+<soap:operation soapAction="https://10.200.180.31/index.php/subscriptions_search" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="subscription_get_default_fields">
+<soap:operation soapAction="https://10.200.180.31/index.php/subscription_get_default_fields" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="offers_search">
+<soap:operation soapAction="https://10.200.180.31/index.php/offers_search" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="offer_get_to_define_fields">
+<soap:operation soapAction="https://10.200.180.31/index.php/offer_get_to_define_fields" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="connections_search">
+<soap:operation soapAction="https://10.200.180.31/index.php/connections_search" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="connections_logoff">
+<soap:operation soapAction="https://10.200.180.31/index.php/connections_logoff" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="userlog_search_by_ip">
+<soap:operation soapAction="https://10.200.180.31/index.php/userlog_search_by_ip" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="userlog_search_by_connectionid">
+<soap:operation soapAction="https://10.200.180.31/index.php/userlog_search_by_connectionid" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="urls_get_toprank">
+<soap:operation soapAction="https://10.200.180.31/index.php/urls_get_toprank" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="httplog_search_by_ip">
+<soap:operation soapAction="https://10.200.180.31/index.php/httplog_search_by_ip" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="httplog_search_by_url">
+<soap:operation soapAction="https://10.200.180.31/index.php/httplog_search_by_url" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="httplog_search_by_connectionid">
+<soap:operation soapAction="https://10.200.180.31/index.php/httplog_search_by_connectionid" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="maillog_search_by_ip">
+<soap:operation soapAction="https://10.200.180.31/index.php/maillog_search_by_ip" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="maillog_search_by_from">
+<soap:operation soapAction="https://10.200.180.31/index.php/maillog_search_by_from" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="maillog_search_by_to">
+<soap:operation soapAction="https://10.200.180.31/index.php/maillog_search_by_to" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="maillog_search_by_connectionid">
+<soap:operation soapAction="https://10.200.180.31/index.php/maillog_search_by_connectionid" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="sms_get_credit">
+<soap:operation soapAction="https://10.200.180.31/index.php/sms_get_credit" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="portal_get_access_code">
+<soap:operation soapAction="https://10.200.180.31/index.php/portal_get_access_code" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="https://nyadm_ws10.netinary.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+</binding>
+<service name="admin_webservices">
+<port name="admin_webservicesPort" binding="tns:admin_webservicesBinding">
+<soap:address location="https://10.200.180.31:90/index.php"/>
+</port>
+</service>
+</definitions>
